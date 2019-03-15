@@ -25,6 +25,7 @@ type Ring struct {
 
 /*
 Set the maximum size of the ring buffer.
+*/Set the maximum size of the ring buffer.
 */
 func (r *Ring) SetCapacity(size int) {
 	r.Lock()
@@ -103,6 +104,9 @@ func (r *Ring) Dequeue() interface{} {
 
 /*
 Read the value that Dequeue would have dequeued without actually dequeuing it.
+
+Returns nil if the ring buffer is empty.
+*/Peek reads the value that Dequeue would have dequeued without actually dequeuing it.
 
 Returns nil if the ring buffer is empty.
 */
